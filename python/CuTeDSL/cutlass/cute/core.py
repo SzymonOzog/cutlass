@@ -1587,7 +1587,7 @@ def pretty_str(arg) -> str:
 
 
 @dsl_user_op
-def printf(*args, loc=None, ip=None) -> None:
+def printf(*args, loc=None, ip=None, end="\n") -> None:
     """
     Print one or more values with optional formatting.
 
@@ -1607,6 +1607,8 @@ def printf(*args, loc=None, ip=None) -> None:
     :type loc: Optional[Location]
     :param ip: Insertion point for code generation, defaults to None
     :type ip: Optional[InsertionPoint]
+    :param end: Suffix for the printed value, defaults to newline
+    :type end: Optional[str]
     :raises ValueError: If no arguments are provided
     :raises TypeError: If an unsupported argument type is passed
 
